@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sliver_example/examples.dart';
+import 'package:sliver_example/examples/ex_9_sliver_animated_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,6 +40,26 @@ final List<Map<String, dynamic>> _examples = [
     'title': 'SliverToBoxAdapter',
     'widget': const SliverToBoxAdapterExample(),
   },
+  {
+    'title': 'SliverGrid',
+    'widget': const SliverGridExample(),
+  },
+  {
+    'title': 'SliverFixedExtandList',
+    'widget': const SliverFixedExtantListExample(),
+  },
+  {
+    'title': 'SliverGridCount',
+    'widget': const SliverGridCountExample(),
+  },
+  {
+    'title': 'SliverGridExtent',
+    'widget': const SliverGridExtentCount(),
+  },
+  {
+    'title': 'SliverAnimatedList',
+    'widget': const SliverAnimatedListExample(),
+  }
 ];
 
 class SliverExampleNavigatorList extends StatelessWidget {
