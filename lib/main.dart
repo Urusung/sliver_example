@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sliver_example/examples.dart';
-import 'package:sliver_example/examples/ex_9_sliver_animated_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SliverExampleNavigatorList(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -45,20 +43,44 @@ final List<Map<String, dynamic>> _examples = [
     'widget': const SliverGridExample(),
   },
   {
-    'title': 'SliverFixedExtandList',
-    'widget': const SliverFixedExtantListExample(),
+    'title': 'SliverFixedExtendedList',
+    'widget': const SliverFixedExtentListExample(),
   },
   {
-    'title': 'SliverGridCount',
+    'title': 'SliverGrid.count',
     'widget': const SliverGridCountExample(),
   },
   {
-    'title': 'SliverGridExtent',
-    'widget': const SliverGridExtentCount(),
+    'title': 'SliverGrid.extent',
+    'widget': const SliverGridExtentExample(),
   },
   {
     'title': 'SliverAnimatedList',
     'widget': const SliverAnimatedListExample(),
+  },
+  {
+    'title': 'SliverFillRemaining',
+    'widget': const SliverFillRemainingExample(),
+  },
+  {
+    'title': 'SliverFillViewport',
+    'widget': const SliverFillViewportExample(),
+  },
+  {
+    'title': 'Sliver Overlap',
+    'widget': const SliverFillOverlapExample(),
+  },
+  {
+    'title': 'Sliver App Grid Mix',
+    'widget': const SliverAppGridExample(),
+  },
+  {
+    'title': 'SliverAppBarWithTabs',
+    'widget': const SliverAppBarWithTabsExample(),
+  },
+  {
+    'title': 'SliverListWithRefresh',
+    'widget': const RefreshSliverListExample(),
   }
 ];
 
@@ -66,19 +88,17 @@ class SliverExampleNavigatorList extends StatelessWidget {
   const SliverExampleNavigatorList({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'sliver examples',
-          style: TextStyle(color: Colors.white),
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'sliver examples',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.deepPurple,
         ),
-        backgroundColor: Colors.deepPurple,
-      ),
-      body: ListView.builder(
-        itemCount: _examples.length,
-        itemBuilder: (context, index) {
-          return ListTile(
+        body: ListView.builder(
+          itemCount: _examples.length,
+          itemBuilder: (context, index) => ListTile(
             title: Text(_examples[index]['title']),
             onTap: () {
               Navigator.push(
@@ -88,9 +108,7 @@ class SliverExampleNavigatorList extends StatelessWidget {
                 ),
               );
             },
-          );
-        },
-      ),
-    );
-  }
+          ),
+        ),
+      );
 }

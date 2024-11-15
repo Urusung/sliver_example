@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
 
-class SliverGridExtentCount extends StatelessWidget {
-  const SliverGridExtentCount({super.key});
+///
+/// sliver_example
+/// File Name: ex_8_sliver_grid_extent
+/// Created by sujangmac
+///
+/// Description:
+///
+
+class SliverGridExtentExample extends StatelessWidget {
+  const SliverGridExtentExample({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'SliverGridExtentCount',
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Text('SliverGrid.extent'),
         ),
-      ),
-      body: CustomScrollView(
-        slivers: [
-          SliverGrid.extent(
-            maxCrossAxisExtent: 150,
-            childAspectRatio: 2 / 3,
-            children: List.generate(
-              20,
-              (index) {
-                return Container(
+        body: CustomScrollView(
+          slivers: [
+            SliverGrid.extent(
+              maxCrossAxisExtent: 150.0,
+              childAspectRatio: 2 / 3,
+              children: List.generate(
+                20,
+                (index) => Container(
                   alignment: Alignment.center,
-                  color: Colors.green[100 * (index % 9)],
+                  color: Colors.pink[100 * (index % 9)],
                   child: Text('Grid Item $index'),
-                );
-              },
-            ),
-          )
-        ],
-      ),
-    );
-  }
+                ),
+              ),
+            )
+          ],
+        ),
+      );
 }
